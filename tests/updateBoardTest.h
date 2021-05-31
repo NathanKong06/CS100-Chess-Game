@@ -13,30 +13,30 @@ TEST(pawnTest, pawnMove){
 }
 
 TEST(knightTest, knightMove){
-    std::string ans =  "   =====================================\n8  |   r   n   b   q   k   b   n   r   |\n   |                                   |\n7  |   p   p   p   p   p   p   p   p   |\n   |                                   |\n6  |   0   0   0   0   0   0   0   0   |\n   |                                   |\n5  |   0   0   0   0   0   0   0   0   |\n   |                                   |\n4  |   0   0   0   0   0   0   0   0   |\n   |                                   |\n3  |   N   0   0   0   0   0   0   0   |\n   |                                   |\n2  |   P   P   P   P   P   P   P   P   |\n   |                                   |\n1  |   R   0   B   Q   K   B   N   R   |\n   |                                   |\n   =====================================\n       A   B   C   D   E   F   G   H\n";
-    Board board;
-    board.setColor('w');
-    board.updateBoard("b1", "a3");
-    EXPECT_EQ(board.printBoard(), ans);
+   std::string ans =  "   =====================================\n8  |   r   n   b   q   k   b   n   r   |\n   |                                   |\n7  |   p   p   p   p   p   p   p   p   |\n   |                                   |\n6  |   0   0   0   0   0   0   0   0   |\n   |                                   |\n5  |   0   0   0   0   0   0   0   0   |\n   |                                   |\n4  |   0   0   0   0   0   0   0   0   |\n   |                                   |\n3  |   N   0   0   0   0   0   0   0   |\n   |                                   |\n2  |   P   P   P   P   P   P   P   P   |\n   |                                   |\n1  |   R   0   B   Q   K   B   N   R   |\n   |                                   |\n   =====================================\n       A   B   C   D   E   F   G   H\n";
+   Board board;
+   board.setColor('w');
+   board.updateBoard("b1", "a3");
+   EXPECT_EQ(board.printBoard(), ans);
 }
 
 TEST(rookTest, rookMoveEatsPawn){
-    std::string ans =  "   =====================================\n8  |   r   n   b   q   k   b   n   r   |\n   |                                   |\n7  |   R   p   p   p   p   p   p   p   |\n   |                                   |\n6  |   0   0   0   0   0   0   0   0   |\n   |                                   |\n5  |   0   0   0   0   0   0   0   0   |\n   |                                   |\n4  |   0   0   0   0   0   0   0   0   |\n   |                                   |\n3  |   0   0   0   0   0   0   0   0   |\n   |                                   |\n2  |   0   P   P   P   P   P   P   P   |\n   |                                   |\n1  |   0   N   B   Q   K   B   N   R   |\n   |                                   |\n   =====================================\n       A   B   C   D   E   F   G   H\n";
-    std::vector<std::vector<char>> sp = {
-        { 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' },
-        { 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p' },
-        { '0', '0', '0', '0', '0', '0', '0', '0' },
-        { '0', '0', '0', '0', '0', '0', '0', '0' },
-        { '0', '0', '0', '0', '0', '0', '0', '0' },
-        { '0', '0', '0', '0', '0', '0', '0', '0' },
-        { '0', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
-        { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
-    };
-    Board board;
-    board.setPosition(sp);
-    board.setColor('w');
-    board.updateBoard("a1", "a7");
-    EXPECT_EQ(board.printBoard(), ans);
+   std::string ans =  "   =====================================\n8  |   r   n   b   q   k   b   n   r   |\n   |                                   |\n7  |   R   p   p   p   p   p   p   p   |\n   |                                   |\n6  |   0   0   0   0   0   0   0   0   |\n   |                                   |\n5  |   0   0   0   0   0   0   0   0   |\n   |                                   |\n4  |   0   0   0   0   0   0   0   0   |\n   |                                   |\n3  |   0   0   0   0   0   0   0   0   |\n   |                                   |\n2  |   0   P   P   P   P   P   P   P   |\n   |                                   |\n1  |   0   N   B   Q   K   B   N   R   |\n   |                                   |\n   =====================================\n       A   B   C   D   E   F   G   H\n";
+   std::vector<std::vector<char>> sp = {
+       { 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r' },
+       { 'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p' },
+       { '0', '0', '0', '0', '0', '0', '0', '0' },
+       { '0', '0', '0', '0', '0', '0', '0', '0' },
+       { '0', '0', '0', '0', '0', '0', '0', '0' },
+       { '0', '0', '0', '0', '0', '0', '0', '0' },
+       { '0', 'P', 'P', 'P', 'P', 'P', 'P', 'P' },
+       { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R' }
+   };
+   Board board;
+   board.setPosition(sp);
+   board.setColor('w');
+   board.updateBoard("a1", "a7");
+   EXPECT_EQ(board.printBoard(), ans);
 }
 
 TEST(bishopTest, bishopMove){
